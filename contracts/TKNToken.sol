@@ -23,14 +23,4 @@ contract TKNToken is ERC20, Stakeable, Ownable {
         _transfer(msg.sender, address(this), amount);
         _distribute(amount);
     }
-
-    // function greet() public view returns (string memory) {
-    //     uint rewardToDistribute = 153;
-    //     uint totalStaked = 1000;
-    //     uint S = ((rewardToDistribute*10000/totalStaked) * (100))/100;
-
-    //     uint userStacked = 1000;
-    //     uint userReward = (S*userStacked)/10000;
-    //     return greeting;
-    // }
 }
