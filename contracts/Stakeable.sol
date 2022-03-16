@@ -33,12 +33,20 @@ contract Stakeable {
         sumOfRewardPercentOverTime = sumOfRewardPercentOverTime + (((amount*10000/totalStaked) * (100))/100);
     }
 
-    function calculateReward(address user) external view returns (uint256) {
+    function calculateReward(address user) public view returns (uint256) {
         Stake storage stake = stakes[user];
 
         /**
         * Calculate the total tokens reward for a user
         */
         return ((sumOfRewardPercentOverTime - stake.sumOfRewardPercentOverTimeAtSince)*stake.amount)/10000;   
+    }
+
+    function _unstake(address user) internal returns(uint256) {
+        uint256 amountStaked = stakes[user].amount;
+        totalStaked = totalStaked - amountStaked;
+        stakes[user].amount = 0;
+
+        return amountStaked + calculateReward(user);
     }
 }

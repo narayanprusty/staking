@@ -23,4 +23,15 @@ contract TKNToken is ERC20, Stakeable, Ownable {
         _transfer(msg.sender, address(this), amount);
         _distribute(amount);
     }
+
+    function unstake(uint256 amount) public {
+        uint256 total = _unstake(msg.sender);
+        require(total >= amount, "withdrawing amount large than balance");
+
+        _transfer(address(this), msg.sender, amount);
+
+        if(total - amount > 0) {
+            _stake(total-amount);
+        }
+    }
 }

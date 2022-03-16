@@ -31,4 +31,9 @@ describe("TKNToken", function () {
     await tknToken.distribute(100);
     expect(await tknToken.calculateReward(user.address)).to.equal(100);
   })
+
+  it("unstake", async function () {
+    await tknToken.unstake(1150);
+    expect((await tknToken.stakes(user.address)).amount).to.equal(50);
+  })
 });
