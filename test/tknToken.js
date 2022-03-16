@@ -33,7 +33,7 @@ describe("TKNToken", function () {
   })
 
   it("unstake", async function () {
-    await tknToken.unstake(1150);
+    await tknToken.connect(user).unstake(1050);
     expect((await tknToken.stakes(user.address)).amount).to.equal(50);
   })
 });

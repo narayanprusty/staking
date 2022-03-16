@@ -44,9 +44,12 @@ contract Stakeable {
 
     function _unstake(address user) internal returns(uint256) {
         uint256 amountStaked = stakes[user].amount;
+        require(amountStaked > 0, "user hasn't staked");
+
+        uint256 reward = calculateReward(user);
         totalStaked = totalStaked - amountStaked;
         stakes[user].amount = 0;
 
-        return amountStaked + calculateReward(user);
+        return amountStaked + reward;
     }
 }

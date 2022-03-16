@@ -1,15 +1,10 @@
-# Basic Sample Hardhat Project
+# Scalable Reward Distribution on the Ethereum
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project implements the stacking mechanism mentioned [here](docs/staking.pdf).
 
-Try running some of the following tasks:
+Run the following commands to test the contract:
 
 ```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
+npm install
 npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
 ```
