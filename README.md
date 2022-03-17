@@ -1,6 +1,6 @@
 # Scalable Reward Distribution on the Ethereum
 
-This project implements the stacking mechanism mentioned [here](docs/staking.pdf).
+This project implements the staking mechanism mentioned [here](docs/staking.pdf).
 
 Run the following commands to test the contract:
 
