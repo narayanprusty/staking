@@ -8,3 +8,4 @@ Run the following commands to test the contract:
 npm install
 npx hardhat test
 ```
+Reference: https://itnext.io/creating-a-inheritable-staking-contract-in-solidity-7804ae2d7a32
